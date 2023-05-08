@@ -16,14 +16,23 @@ function Form(props) {
 },[props.employee]) 
 
     const updateEmployee = () => {
+        alert ("Thank you! Your info has been updated in our database!");
         APIService.UpdateEmployee(props.employee.id, {firstname, lastname, date, email})
         .then(resp => props.updatedData(resp))
         .catch(error => console.log(error))
 
     }
 
+    const deleteEmployee = () => {
+        alert ("Thank you! Your info has been deleted from our database!");
+        APIService.DeleteEmployee(props.employee.id, {firstname, lastname, date, email})
+        .then(resp => props.deletedData(resp))
+        .catch(error => console.log(error))
+
+    }
+
     const insertEmployee = () => {
-        //alert ("Thank you! Your info has been stored in our database");
+        alert ("Thank you! Your info has been stored in our database");
         APIService.InsertEmployee({firstname, lastname, email})
         .then(resp => props.insertedData(resp))
         .catch(error => console.log(error))
@@ -65,14 +74,20 @@ function Form(props) {
                     props.employee.id ? <button
                     onClick={updateEmployee}
                     className = "btn btn-success mt-3"
-                    >Update</button>
+                    >Edit</button>
                     :
 
                     <button
                     onClick={insertEmployee}
                     className = "btn btn-success mt-3"
                     >Insert Employee</button>
-            }
+
+                } 
+                    <button
+                    onClick={deleteEmployee}
+                    className = "btn btn-success mt-3"
+                    >Delete Employee</button>
+            
                 </div>
             ):null}
             </div>

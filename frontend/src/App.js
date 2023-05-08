@@ -67,13 +67,12 @@ const insertedEmployee = (employee) => {
 
 </div>
 </div>
-        <title>Flask / React App</title>
+        
         <br/>
         <br/>
         
-        <EmployeeList employees = {employees} editEmployee={editEmployee}/>
-
-        {editedEmployee ? <Form employee = {editedEmployee} updatedData = {updatedData} insertedEmployee  = {insertedEmployee}/>: null}
+        <EmployeeList employees = {employees} editEmployee={editEmployee}/>{editedEmployee ? 
+        <Form employee = {editedEmployee} updatedData = {updatedData} insertedEmployee  = {insertedEmployee}/>: null}
         </div>
   
   );

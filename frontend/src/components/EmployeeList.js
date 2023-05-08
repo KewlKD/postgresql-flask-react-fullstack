@@ -21,13 +21,9 @@ function EmployeeList(props) {
         <div classname = "row">
             <div classname ="col-md-1">
                 <button className = "btn btn-primary"
-                onClick = {() => editEmployee(employee)}>Update</button>
+                onClick = {() => editEmployee(employee)}>Choose to Edit/Delete</button>
             </div>
 
-
-            <div classname ="col">
-                <button className = "btn btn-danger">Delete</button>
-            </div>
 
             </div>
 
