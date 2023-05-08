@@ -1,10 +1,7 @@
-/* eslint-disable no-template-curly-in-string */
-
-
 export default class APIService {
-    static async UpdateEmployee(firstname,lastname,email) {
+    static async UpdateEmployee(id, firstname,lastname,email) {
 
-        const resp = await fetch('http://127.0.0.1:8000/update/${id}/', {
+        const resp = await fetch(`http://127.0.0.1:8000/update/${id}/`, {
         'method': 'PUT',
         headers: {
           'Content-Type': 'application/json'
